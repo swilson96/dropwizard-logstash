@@ -6,7 +6,9 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 repositories {
-    mavenCentral()
+    maven {
+        url "http://34.241.75.87:8081/artifactory/verify"
+    }
 }
 
 def dependencyVersions = [
@@ -60,7 +62,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file:/srv/maven" // change to point to your repo, e.g. http://my.org/repo
+            url "http://34.241.75.87:8081/artifactory/verify" // change to point to your repo, e.g. http://my.org/repo
         }
     }
 }
